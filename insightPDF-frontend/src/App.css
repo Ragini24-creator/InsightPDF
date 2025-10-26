@@ -1,0 +1,284 @@
+/* Main container */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Left panel */
+.left-panel {
+  flex: 1;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 3rem;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+/* Right panel */
+.right-panel {
+  flex: 1;
+  background: #fafafa;
+  border-left: 1px solid #e5e7eb;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.chat-window {
+  display: flex;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex-direction: column;
+  width: 90%;           
+  max-width: 30rem;     
+  height: 60vh;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.625rem;
+  padding: 1rem;
+  background-color: #fff;
+  overflow-y: auto;
+  margin: 1rem auto 0 auto; 
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.user-msg {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #a8e6cf, #dcf8c6); 
+  color: #1a1a1a;
+  padding: 10px 14px;
+  border-radius: 18px 18px 0 18px;
+  margin: 5px 0;
+  max-width: 75%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  word-wrap: break-word;
+}
+
+/* Bot messages */
+.bot-msg {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  color: #1a1a1a;
+  padding: 10px 14px;
+  border-radius: 18px 18px 18px 0;
+  margin: 5px 0;
+  max-width: 75%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
+
+.user-msg:hover,
+.bot-msg:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.citations {
+  margin-top: 0.6rem;
+}
+
+.citation-btn {
+  font-size: 0.7rem;
+  background-color: #20c997; 
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem; 
+  padding: 0.3rem 0.6rem; 
+  cursor: pointer;
+  margin-right: 0.3rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.citation-btn:hover {
+  background-color: #38d9a9;
+  transform: scale(1.05); 
+}
+
+
+/* Input container */
+.input-container {
+  display: flex;
+  width: 90%;            
+  max-width: 30rem;      
+  margin: 1rem auto 0 auto; 
+  gap: 0.5rem;           
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Disabled input field */
+.input-container input:disabled {
+  background-color: #f0f0f0; 
+  cursor: not-allowed;
+  color: #999;
+}
+
+/* Send button */
+.send-btn {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.send-btn:hover {
+  background-color: #45a049;
+}
+
+/* Disabled send button */
+.input-container .send-btn:disabled {
+  background-color: #ccc; 
+  cursor: not-allowed;
+  color: #666;
+}
+
+/* Clear session button */
+.clear-session-btn {
+  display: block;        
+  margin: 0.5rem auto 1rem auto; 
+  padding: 0.5rem 1rem;  
+  border-radius: 0.625rem;
+  border: none;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.clear-session-btn:hover {
+  background-color: #d32f2f;
+}
+
+/*********************************************************************************************
+*********************************************************************************************/
+
+/* Base bot message styling */
+.bot-msg {
+  align-self: flex-start;
+  background-color: #e8e8e8;
+  padding: 8px 12px;
+  border-radius: 15px 15px 15px 0;
+  margin: 5px 0;
+  max-width: 80%;
+}
+
+/* Typing animation container */
+.thinking .dot {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 24px;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+/* Sequential animation delays for dots */
+.thinking .dot:nth-child(1) { animation-delay: 0s; }
+.thinking .dot:nth-child(2) { animation-delay: 0.2s; }
+.thinking .dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Blink + scale animation */
+@keyframes blink {
+  0%, 20%, 50%, 80%, 100% { opacity: 0.2; transform: scale(1); }
+  40% { opacity: 1; transform: scale(1.4); }
+  60% { opacity: 0.6; transform: scale(1.2); }
+}
+
+
+/* PdfUpload css */
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.upload-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.125rem dashed #1e90ff; 
+  border-radius: 0.4rem;
+  padding: 1.2rem 1.5rem; 
+  width: 12.5rem; 
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s ease;
+  color: #1e90ff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  position: relative;
+  background-color: #f8fbff;
+}
+
+.upload-box:hover {
+  background: #f0f8ff; 
+  border-color: #104e8b; 
+}
+
+.upload-box input {
+  display: none; 
+}
+
+.upload-text .arrow {
+  display: inline-block;
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.error-text {
+  color: red;
+  margin-top: 10px;
+}
+
+.file-text {
+  color: #1e90ff;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* ✅ Responsive layout */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .right-panel {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    width: 320px;
+    height: 420px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    cursor: move;
+    z-index: 20;
+  }
+}
