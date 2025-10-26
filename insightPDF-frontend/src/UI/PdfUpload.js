@@ -34,7 +34,7 @@ export default function PdfUpload({onUpload, onSuccessfulUpload}){
     })
 
    const data = await res.json()
-   console.log("Pdf processed", data)
+
   }catch(error){
      console.error(error)
   }
