@@ -10,7 +10,7 @@ export async function sendQuery(sessionId, query) {
     });
 
     const data = await response.json();
-    console.log('response from chat bot: ', data)
+ 
     return { answer: data?.answer, citations: data?.citations };
 }
 
