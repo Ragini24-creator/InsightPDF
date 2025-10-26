@@ -1,5 +1,4 @@
-// let baseURL = process.env.REACT_APP_BASE_URL;
-let baseURL =  "http://localhost:8002"
+let baseURL = process.env.REACT_APP_BASE_URL;
 
 
 // Process a new user query

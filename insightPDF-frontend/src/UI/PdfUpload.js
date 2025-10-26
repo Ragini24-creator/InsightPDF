@@ -28,7 +28,7 @@ export default function PdfUpload({onUpload, onSuccessfulUpload}){
     formData.append("pdf",file);
 
     try{
-      const res = await fetch("http://localhost:8002/api/upload-pdf",{
+      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/api/upload-pdf`,{
       method: "POST",
       body: formData
     })
